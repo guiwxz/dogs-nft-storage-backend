@@ -27,4 +27,15 @@ const fetchDog = async (req: Request, res: Response) => {
   }
 };
 
-export default { fetchDog, store };
+const deleteDog = async (req: Request, res: Response) => {
+  try {
+    console.log(req.params);
+    const dogFile = await DogsModel.deleteOne({ _id: req.params.id })
+    console.log(dogFile);
+    return res.status(200).json();
+  } catch (err) {
+    res.status(500).json({ error: "Não foi possível excluir" });
+  }
+};
+
+export default { fetchDog, store, deleteDog };
