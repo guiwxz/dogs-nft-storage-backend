@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "start": "node index.ts",
+    "start": "ts-node index.ts",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.ts\""
   },
   "author": "",
@@ -18,7 +18,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.4.4",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
